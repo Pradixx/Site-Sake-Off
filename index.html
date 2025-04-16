@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sake Off Company - Streetwear</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="tema-claro">
+    <header>
+        <div class="nav-bar">
+            <div class="row">
+                <div class="col">
+                    <h1 class="nav-title">Sake Off Company</h1>
+                </div>
+                <div class="col">
+                    <button id="btn-tema" class="btn-tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="carrinho">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="carrinho-contador">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="nav-header">
+            <ul>
+                <li><a href="index.html" class="link-ativo">Início</a></li>
+                <li><a href="paginas/produtos.html">Produtos</a></li>
+                <li><a href="paginas/categorias.html">Categorias</a></li>
+                <li><a href="paginas/sobre.html">Sobre</a></li>
+                <li><a href="paginas/contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <h2 class="banner-titulo">Streetwear com Atitude</h2>
+            <p class="banner-slogan">Para a democracia vestuária, iremos com uma peça de cada vez</p>
+        </section>
+
+        <section class="produtos-destaque">
+            <h2>Destaques da Coleção</h2>
+            <div class="grid-produtos">
+                <div class="produto">
+                    <img src="/img/produto1.jpg" alt="Camiseta Oversized">
+                    <h3>Camiseta Oversized</h3>
+                    <p class="preco">R$ 129,99</p>
+                    <button class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <img src="/img/produto2.jpg" alt="Moletom Street">
+                    <h3>Moletom Street</h3>
+                    <p class="preco">R$ 199,99</p>
+                    <button class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <img src="/img/produto3.jpg" alt="Calça Cargo">
+                    <h3>Calça Cargo</h3>
+                    <p class="preco">R$ 179,99</p>
+                    <button class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <img src="/img/produto4.jpg" alt="Boné Trucker">
+                    <h3>Boné Trucker</h3>
+                    <p class="preco">R$ 89,99</p>
+                    <button class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="categorias">
+            <h2>Categorias</h2>
+            <div class="grid-categorias">
+                <div class="categoria">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Camisetas</h3>
+                    <a href="paginas/produtos.html?categoria=camisetas" class="btn-categoria">Ver Mais</a>
+                </div>
+                <div class="categoria">
+                    <i class="fas fa-vest"></i>
+                    <h3>Moletons</h3>
+                    <a href="#" class="btn-categoria em-breve">Ver Mais</a>
+                    <span class="tooltip">Em breve</span>
+                </div>
+                <div class="categoria">
+                    <i class="fas fa-socks"></i>
+                    <h3>Calças</h3>
+                    <a href="#" class="btn-categoria em-breve">Ver Mais</a>
+                    <span class="tooltip">Em breve</span>
+                </div>
+                <div class="categoria">
+                    <i class="fas fa-hat-cowboy"></i>
+                    <h3>Acessórios</h3>
+                    <a href="#" class="btn-categoria em-breve">Ver Mais</a>
+                    <span class="tooltip">Em breve</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-info">
+                <h3>Informações</h3>
+                <p>Horário de Atendimento: Seg-Sex, 9h-18h</p>
+                <p>Email: contato@sakeoff.com</p>
+                <p>Telefone: (11) 1234-5678</p>
+            </div>
+            <div class="footer-pagamento">
+                <h3>Formas de Pagamento</h3>
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2024 Sake Off Company. Todos os direitos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

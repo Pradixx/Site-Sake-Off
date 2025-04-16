@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Sake Off Company</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .swiper {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 2rem;
+        }
+        .swiper-slide {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .swiper-slide img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #2c3e50;
+        }
+        .swiper-pagination-bullet-active {
+            background: #2c3e50;
+        }
+    </style>
+</head>
+<body class="tema-claro">
+    <header>
+        <div class="nav-bar">
+            <div class="row">
+                <div class="col">
+                    <h1 class="nav-title">Sake Off Company</h1>
+                </div>
+                <div class="col">
+                    <button id="btn-tema" class="btn-tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="carrinho">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="carrinho-contador">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="nav-header">
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="produtos.html" class="link-ativo">Produtos</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="produtos-destaque">
+            <h2>Nossos Produtos</h2>
+            
+            <!-- Produto 1 -->
+            <div class="produto-container">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../../img/produto1-1.jpg" alt="Produto 1 - Vista 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../../img/produto1-2.jpg" alt="Produto 1 - Vista 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../../img/produto1-3.jpg" alt="Produto 1 - Vista 3">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div class="produto-info">
+                    <h3>Produto 1</h3>
+                    <p class="preco">R$ 99,99</p>
+                    <p class="descricao">Descrição detalhada do produto 1.</p>
+                    <button class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="produto-container">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../../img/produto2-1.jpg" alt="Produto 2 - Vista 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../../img/produto2-2.jpg" alt="Produto 2 - Vista 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../../img/produto2-3.jpg" alt="Produto 2 - Vista 3">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div class="produto-info">
+                    <h3>Produto 2</h3>
+                    <p class="preco">R$ 149,99</p>
+                    <p class="descricao">Descrição detalhada do produto 2.</p>
+                    <button class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="produto-container">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../../img/produto3-1.jpg" alt="Produto 3 - Vista 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../../img/produto3-2.jpg" alt="Produto 3 - Vista 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../../img/produto3-3.jpg" alt="Produto 3 - Vista 3">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div class="produto-info">
+                    <h3>Produto 3</h3>
+                    <p class="preco">R$ 199,99</p>
+                    <p class="descricao">Descrição detalhada do produto 3.</p>
+                    <button class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="produto-container">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../../img/produto4-1.jpg" alt="Produto 4 - Vista 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../../img/produto4-2.jpg" alt="Produto 4 - Vista 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../../img/produto4-3.jpg" alt="Produto 4 - Vista 3">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div class="produto-info">
+                    <h3>Produto 4</h3>
+                    <p class="preco">R$ 249,99</p>
+                    <p class="descricao">Descrição detalhada do produto 4.</p>
+                    <button class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-info">
+                <h3>Informações</h3>
+                <p>Horário de Atendimento: Seg-Sex, 9h-18h</p>
+                <p>Email: contato@lojaonline.com</p>
+                <p>Telefone: (11) 1234-5678</p>
+            </div>
+            <div class="footer-pagamento">
+                <h3>Formas de Pagamento</h3>
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2024 Sake Off Company. Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Inicializar todos os carousels
+        document.querySelectorAll('.swiper').forEach(swiperEl => {
+            new Swiper(swiperEl, {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        });
+    </script>
+</body>
+</html> 
