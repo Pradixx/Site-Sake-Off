@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sake Off Company</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/supabase.js" type="module"></script>
+    <script src="../js/login.js" type="module" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="tema-claro">
+    <header>
+        <div class="nav-bar">
+            <div class="row">
+                <div class="col">
+                    <h1 class="nav-title">Sake Off Company</h1>
+                </div>
+                <div class="col">
+                    <button class="btn-tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="nav-header">
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-box">
+            <h2>Login</h2>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn-auth">Entrar</button>
+            </form>
+            <div class="auth-links">
+                <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+                <p><a href="#">Esqueceu sua senha?</a></p>
+            </div>
+            <div id="authMessage" class="auth-message"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-info">
+                <h3>Informações</h3>
+                <p>Horário de Atendimento: Seg-Sex, 9h-18h</p>
+                <p>Email: contato@sakeoff.com</p>
+                <p>Telefone: (11) 1234-5678</p>
+            </div>
+            <div class="footer-pagamento">
+                <h3>Formas de Pagamento</h3>
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2024 Sake Off Company. Todos os direitos reservados</p>
+        </div>
+    </footer>
+</body>
+</html> 
