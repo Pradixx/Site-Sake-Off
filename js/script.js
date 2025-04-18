@@ -1,23 +1,82 @@
-document.addEventListener("DOMContentLoaded", () => {
-    destacarLinkAtivo();
-    const btnTema = document.querySelector('.btn-tema');
-    const body = document.body;
+
+
+import { basePath, accountPath } from './config.js';
+import { supabase } from './supabase.js';
+import { user } from './user.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Script principal carregado.');
+
+    // Exemplo de funcionalidade adicional
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const currentTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+            localStorage.setItem('theme', currentTheme);
+        });
+    }
+});
     
-    // Verificar tema salvo
-    const temaSalvo = localStorage.getItem('tema');
-    if (temaSalvo === 'escuro') {
-        body.classList.add('tema-escuro');
-        btnTema.innerHTML = '<i class="fas fa-sun"></i>';
+    // Atualizar botões de autenticação
+    const authContainer = document.getElementById('auth-container')
+    if (user && authContainer) {
+        // Buscar dados do perfil do usuário
+        const { data: profile } = await supabase
+            .from('profiles')
+            .select('nome')
+            .eq('id', user.id)
+            .single()
+
+        // Pegar o primeiro nome
+        const primeiroNome = profile?.nome ? profile.nome.split(' ')[0] : 'Usuário'
+
+        // Substituir botões de login/cadastro pelo botão de usuário
+        authContainer.innerHTML = `
+            <div class="user-menu">
+                <a href="${accountPath}" class="user-greeting">
+                    Olá, ${primeiroNome}
+                </a>
+            </div>
+        `
+    } else if (authContainer) {
+        // Garantir que os botões de login/cadastro estejam presentes
+        authContainer.innerHTML = `
+            <a href="${basePath}login.html" class="btn-login">Login</a>
+            <a href="${basePath}cadastro.html" class="btn-cadastro">Cadastro</a>
+        `
     }
 
-    // Alternar tema
+    // Gerenciar tema
+    const btnTema = document.querySelector('.btn-tema')
+    const body = document.body
+    const icon = btnTema.querySelector('i')
+
+    // Carregar tema salvo
+    const temaSalvo = localStorage.getItem('tema')
+    if (temaSalvo) {
+        body.className = temaSalvo
+        icon.className = temaSalvo === 'tema-escuro' ? 'fas fa-sun' : 'fas fa-moon'
+    }
+
     btnTema.addEventListener('click', () => {
-        body.classList.toggle('tema-escuro');
-        const temaAtual = body.classList.contains('tema-escuro') ? 'escuro' : 'claro';
-        localStorage.setItem('tema', temaAtual);
-        btnTema.innerHTML = temaAtual === 'escuro' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    });
-});
+        if (body.classList.contains('tema-claro')) {
+            body.classList.remove('tema-claro')
+            body.classList.add('tema-escuro')
+            icon.classList.remove('fa-moon')
+            icon.classList.add('fa-sun')
+            localStorage.setItem('tema', 'tema-escuro')
+        } else {
+            body.classList.remove('tema-escuro')
+            body.classList.add('tema-claro')
+            icon.classList.remove('fa-sun')
+            icon.classList.add('fa-moon')
+            localStorage.setItem('tema', 'tema-claro')
+        }
+    })
+
+    destacarLinkAtivo();
+;
 
 function destacarLinkAtivo() {
     const linksNavegacao = document.querySelectorAll("nav ul li a");
