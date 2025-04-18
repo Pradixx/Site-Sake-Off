@@ -1,54 +1,46 @@
-import { signUp } from './supabase.js'
+import { supabase } from './supabase.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const cadastroForm = document.getElementById('cadastroForm')
-    const authMessage = document.getElementById('authMessage')
+    const registerForm = document.getElementById('register-form');
+    const authMessage = document.getElementById('mensagem');
 
-    cadastroForm.addEventListener('submit', async (e) => {
-        e.preventDefault()
-        
-        const nome = document.getElementById('nome').value
-        const email = document.getElementById('email').value
-        const password = document.getElementById('password').value
-        const confirmPassword = document.getElementById('confirmPassword').value
+    registerForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-        // Validação básica
-        if (password !== confirmPassword) {
-            authMessage.textContent = 'As senhas não coincidem!'
-            authMessage.className = 'auth-message error'
-            return
-        }
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('senha').value.trim();
 
-        if (password.length < 6) {
-            authMessage.textContent = 'A senha deve ter pelo menos 6 caracteres!'
-            authMessage.className = 'auth-message error'
-            return
+        if (!email || !password) {
+            authMessage.textContent = 'Por favor, preencha todos os campos.';
+            authMessage.style.display = 'block';
+            authMessage.className = 'auth-message error';
+            return;
         }
 
         try {
-            const { data, error } = await signUp(email, password)
-            
+            const { data, error } = await supabase.auth.signUp({
+                email,
+                password,
+            });
+
             if (error) {
-                authMessage.textContent = error.message
-                authMessage.className = 'auth-message error'
-                return
+                authMessage.textContent = 'Erro: ' + error.message;
+                authMessage.style.display = 'block';
+                authMessage.className = 'auth-message error';
+                return;
             }
 
-            // Cadastro bem sucedido
-            authMessage.textContent = 'Cadastro realizado com sucesso! Verifique seu email para confirmar a conta.'
-            authMessage.className = 'auth-message success'
-            
-            // Limpar o formulário
-            cadastroForm.reset()
-            
-            // Redirecionar para a página de login após 3 segundos
-            setTimeout(() => {
-                window.location.href = 'login.html'
-            }, 3000)
+            authMessage.textContent = 'Cadastro realizado com sucesso!';
+            authMessage.style.display = 'block';
+            authMessage.className = 'auth-message success';
 
-        } catch (error) {
-            authMessage.textContent = 'Ocorreu um erro ao tentar cadastrar. Tente novamente.'
-            authMessage.className = 'auth-message error'
+            setTimeout(() => {
+                window.location.href = './login.html';
+            }, 1000);
+        } catch (err) {
+            authMessage.textContent = 'Erro inesperado. Tente novamente.';
+            authMessage.style.display = 'block';
+            authMessage.className = 'auth-message error';
         }
-    })
-}) 
+    });
+});
